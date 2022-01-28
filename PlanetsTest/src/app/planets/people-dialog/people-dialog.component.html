@@ -1,0 +1,17 @@
+<table class="table caption-top" *ngIf="peoples">
+  <caption>Selected People</caption>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Height</th>
+      <th scope="col">Date of Birth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let people of peoples">
+      <td>{{ people.name }}</td>
+      <td>{{ people.height }}</td>
+      <td>{{ people.dateOfBirth }}</td>
+    </tr>
+  </tbody>
+</table>

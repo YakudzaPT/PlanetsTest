@@ -1,8 +1,8 @@
-export interface Planets {
+export interface Planet {
   name: string;
   diameter: number;
   climate: string;
-  population: number
-
+  population: number;
+  residents: string []
 }
 

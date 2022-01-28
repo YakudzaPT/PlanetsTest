@@ -1,8 +1,34 @@
 <mat-form-field appearance="fill">
-  <mat-label>planets</mat-label>
-  <mat-select [( value )]= "selectedPlanets" >
+  <mat-label>planet</mat-label>
+  <mat-select [(value)]="selectedPlanet" >
     <mat-option *ngFor="let planet of planets" [value]="planet">
       {{planet.name}}
     </mat-option>
   </mat-select>
 </mat-form-field>
+
+<table class="table caption-top" *ngIf="selectedPlanet">
+  <caption>Selected Planet</caption>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Diameter</th>
+      <th scope="col">Climate</th>
+      <th scope="col">Population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ selectedPlanet.name }}</td>
+      <td>{{ selectedPlanet.diameter }}</td>
+      <td>{{ selectedPlanet.climate }}</td>
+      <td>{{ selectedPlanet.population }}</td>
+    </tr>
+  </tbody>
+</table>
+<ol>
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+</ol>
+
