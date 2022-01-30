@@ -15,6 +15,7 @@
       <th scope="col">Diameter</th>
       <th scope="col">Climate</th>
       <th scope="col">Population</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -22,13 +23,8 @@
       <td>{{ selectedPlanet.name }}</td>
       <td>{{ selectedPlanet.diameter }}</td>
       <td>{{ selectedPlanet.climate }}</td>
-      <td>{{ selectedPlanet.population }}</td>
+      <td >{{ selectedPlanet.population }}</td>
+      <td ><button mat-raised-button (click)="openDialog()" [disabled]="!selectedPlanet.residents ||selectedPlanet.residents.length==0">Residents</button></td>
     </tr>
   </tbody>
 </table>
-<ol>
-  <li>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
-  </li>
-</ol>
-

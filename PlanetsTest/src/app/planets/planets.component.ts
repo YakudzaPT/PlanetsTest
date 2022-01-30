@@ -23,19 +23,23 @@ export class PlanetsComponent implements OnInit {
     })
   }
 
+
   openDialog() {
     var people: People []= [];
-    this.selectedPlanet?.residents.forEach( residentUrl=> {
-      this.planetsService.getPeople(residentUrl).subscribe( resident =>{
+     this.selectedPlanet?.residents.forEach( residentUrl=> {
+     this.planetsService.getPeople(residentUrl).subscribe( resident =>{
         people.push(resident)
+        if(people.length==this.selectedPlanet?.residents.length){
+          this.dialog.open(PeopleDialogComponent, {
+            data: people
+          });
+        }
+
       })
 
     })
-    this.dialog.open(PeopleDialogComponent, {
-      data: {
-        Planet: 'panda',
-      },
-    });
+    
+
   }
 
 }

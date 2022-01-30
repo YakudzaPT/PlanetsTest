@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { People } from 'src/app/shared/models/peopleInterface';
 
 @Component({
@@ -8,10 +9,9 @@ import { People } from 'src/app/shared/models/peopleInterface';
 })
 export class PeopleDialogComponent implements OnInit {
 
-  public peoples: People []= [];
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public peoples: People[],) { }
 
   ngOnInit(): void {
+    
   }
-
 }
